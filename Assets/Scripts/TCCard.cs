@@ -4,14 +4,32 @@ using UnityEngine;
 
 public class TCCard : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum Type
     {
-        
+        Attack,
+        Move,
+        Skill,
+        Power,
+        Status
     }
 
-    // Update is called once per frame
-    void Update()
+    public Type type;
+    public int cost;
+
+    public TCUnit source;
+    public TCUnit target;
+
+    void Start() 
+    {
+        LoadData();
+    }
+
+    public virtual void LoadData()
+    {
+
+    }
+
+    public virtual void ExcuteEffect()
     {
         
     }
