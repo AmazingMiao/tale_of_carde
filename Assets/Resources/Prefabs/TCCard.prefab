@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4415902407413428887}
   - component: {fileID: 1513319511839681748}
   - component: {fileID: 8080821220765655556}
-  - component: {fileID: -7517815308231328729}
+  - component: {fileID: 4028845326202102305}
   m_Layer: 5
   m_Name: TCCard
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-7517815308231328729
+--- !u!114 &4028845326202102305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,16 +87,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3571379961955149249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77697cb5b3129094da477aba5bb5b4d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 29db1cc5127a8430a8088b624253bbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textName: {fileID: 6031093442104743264}
   textNote: {fileID: 0}
   icon: {fileID: 6031093442314184614}
+  id: 0
   type: 0
   cost: 0
-  source: {fileID: 0}
-  target: {fileID: 0}
+  ss: {fileID: 21300000, guid: 91d6df4fab6d34fe6b1890abf1ef8e0c, type: 3}
 --- !u!1 &6031093442104743278
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 6031093442314184615}
   - component: {fileID: 6031093442314184633}
   - component: {fileID: 6031093442314184614}
+  - component: {fileID: 8101394482659135246}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fa1ad243eabd64775a95a301acc97024, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -251,3 +252,54 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!212 &8101394482659135246
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031093442314184612}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
