@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TCMap : TCNode
 {
@@ -10,7 +11,7 @@ public class TCMap : TCNode
     {
         instance = this;
     }
-    List<TCGrid>grids;
+    public List<TCGrid>grids;
 
     public float row;
     public float col;
@@ -70,7 +71,40 @@ public class TCMap : TCNode
                 ret = grid;
             }
         }
-        Debug.Log(ret);
+        //Debug.Log(ret);
+        return ret;
+    }
+
+    public TCGrid FindGridByPointer(PointerEventData pointer)
+    {
+        TCGrid ret = null;
+        foreach(var grid in grids)
+        {
+            if(grid.transform.position.x + 50 >= pointer.position.x && grid.transform.position.x - 50 <= pointer.position.x && grid.transform.position.y + 50 >= pointer.position.y && grid.transform.position.y - 50 <= pointer.position.y)
+            {
+                ret = grid;
+            }
+        }
+        return ret;
+    }
+
+    public List<TCGrid> FindGridsWithinDistance(TCGrid centerGrid, int distance)
+    {
+        List<TCGrid> ret = new List<TCGrid>();
+        foreach(var grid in grids)
+        {
+            if(Mathf.Abs(grid.x - centerGrid.x) <= distance && Mathf.Abs(grid.y - centerGrid.y) <= distance)
+            {
+                if(centerGrid.x == grid.x && centerGrid.y == grid.y)
+                {
+                    
+                }
+                else
+                {
+                    ret.Add(grid);
+                }
+            }
+        }
         return ret;
     }
 }
