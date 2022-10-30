@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿ID,X,Key,Name,Cost,Note,Range,Type,End
 1,,Card_Knight_Attack_Strike,打击,1,对近战范围内的一个目标造成6点伤害。,1,1,1
 2,,Card_Knight_Attack_Slash,横劈斩,2,对你面前近战范围上所有目标造成4点伤害。,1,1,1
@@ -11,3 +12,18 @@
 10,,Card_Knight_Power_Sacrifice,献祭,1,本场战斗中，每回合失去1点生命。抽1张牌,0,4,1
 11,,Card_Knight_Power_Rage,狂怒,1,获得8层力量，本场战斗中你无法打出技能和能力,0,4,1
 12,,Card_Knight_Power_BeCareful,小心翼翼,3,本场战斗中，你的回合结束时获得等同于手牌数量的防御,0,4,1
+=======
+﻿ID,X,Key,Name,Cost,Note,Range,Value,Type,End
+1,,Card_Knight_Attack_Strike,打击,1,对近战范围内的一个目标造成6点伤害。,1,6,1,1
+2,,Card_Knight_Move_Move,移动,1,移动4格。,4,0,3,1
+3,,Card_Knight_Attack_Crossbow,十字弩,1,对周围5格范围内的一个目标造成3点伤害。,5,3,1,1
+4,,Card_Knight_Skill_Defense,防御,1,获得4点防御。,0,4,2,1
+5,,Card_Knight_Skill_Rush,疾跑,2,你打出的下一张移动的距离加倍。,0,2,2,1
+6,,Card_Knight_Skill_Hold,严阵以待,3,获得20点防御。,0,20,2,1
+7,,Card_Knight_Attack_Slash,横劈斩,2,对你面前近战范围上所有目标造成4点伤害。,1,4,1,1
+8,,Card_Knight_Move_SwiftBlow,迅捷打击,2,向一名目标移动至多4格。若在移动后目标在近战范围内，造成8点伤害。,4,8,3,1
+9,,Card_Knight_Move_Approaching,接近,2,获得三张消耗为0的移动,0,3,3,1
+10,,Card_Knight_Power_Sacrifice,献祭,1,本场战斗中，每回合失去1点生命。抽1张牌,0,1,4,1
+11,,Card_Knight_Power_Rage,狂怒,1,获得8层力量，本场战斗中你无法打出技能和能力,0,8,4,1
+12,,Card_Knight_Power_BeCareful,小心翼翼,3,本场战斗中，你的回合结束时获得等同于手牌数量的防御,0,1,4,1
+>>>>>>> Stashed changes

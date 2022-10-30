@@ -13,12 +13,19 @@ public class TCBattleSystem : MonoBehaviour
     }
 
     public Button mainButton;
+<<<<<<< Updated upstream
 
     //public TCMap map;
 
     public List<TCUnit> playerUnits;
     public List<TCUnit> enemyUnits;
 
+=======
+    public GameObject winPanel;
+
+    //public TCMap map;
+
+>>>>>>> Stashed changes
     public TCUnit source;
     public TCUnit target;
     public TCCard card;
@@ -30,12 +37,24 @@ public class TCBattleSystem : MonoBehaviour
     void Start() 
     {
         mainButton = GetComponentInChildren<Button>();
+<<<<<<< Updated upstream
         TCUnitsSystem.instance.LoadUnits();
         LoadDrawPile();
         state = TCBattleState.Begin;
         //map = GameObject.Find("TCMap").GetComponent<TCMap>();
     }
 
+=======
+        state = TCBattleState.End;
+        //map = GameObject.Find("TCMap").GetComponent<TCMap>();
+    }
+
+    void Update() 
+    {
+        
+    }
+
+>>>>>>> Stashed changes
     public void LoadMap()
     {
 
@@ -59,6 +78,7 @@ public class TCBattleSystem : MonoBehaviour
     //     enemyUnits.Add(enemyUnit2);
     // }
 
+<<<<<<< Updated upstream
     public void LoadDrawPile()
     {
         for(int i=0; i<20; i++)
@@ -70,6 +90,8 @@ public class TCBattleSystem : MonoBehaviour
         TCCardSystem.instance.UpdateUI();
     }
 
+=======
+>>>>>>> Stashed changes
     public void DrawCard()
     {
         for(int i=0; i<8; i++)
@@ -83,19 +105,39 @@ public class TCBattleSystem : MonoBehaviour
         this.state = state;
         switch(state)
         {
+<<<<<<< Updated upstream
+=======
+            case TCBattleState.Begin:
+            TCUnitsSystem.instance.LoadUnits();
+            TCCardSystem.instance.LoadDrawPile();
+            break;
+>>>>>>> Stashed changes
             case TCBattleState.PlayerRound:
             DrawCard();
             break;
             case TCBattleState.EnemyRound:
             TCCardSystem.instance.DiscardAllHands();
+<<<<<<< Updated upstream
             Invoke("OnClick", 1);
+=======
+            Invoke("MainButtonOnClick", 1);
+            break;
+            case TCBattleState.End:
+            TCMap.instance.ClearGrids();
+            TCCardSystem.instance.ClearCards();
+            TCUnitsSystem.instance.ClearUnits();
+>>>>>>> Stashed changes
             break;
             default:
             break;
         }
     }
 
+<<<<<<< Updated upstream
     public void OnClick()
+=======
+    public void MainButtonOnClick()
+>>>>>>> Stashed changes
     {
         if(this.state == TCBattleState.Begin)
         {
@@ -112,5 +154,31 @@ public class TCBattleSystem : MonoBehaviour
             EnterState(TCBattleState.PlayerRound);
             mainButton.interactable = true;
         }
+<<<<<<< Updated upstream
+=======
+        else if(this.state == TCBattleState.End)
+        {
+            EnterState(TCBattleState.Begin);
+            mainButton.GetComponentInChildren<Text>().text = "Start Battle";
+        }
+    }
+
+    public void Win()
+    {
+        EnterState(TCBattleState.End);
+        winPanel.gameObject.SetActive(true);
+        TCCardSystem.instance.selectCardButton.gameObject.SetActive(true);
+    }
+
+    public void Lose()
+    {
+
+    }
+
+    public void ContinueButtonOnClick()
+    {
+        winPanel.gameObject.SetActive(false);
+        EnterState(TCBattleState.Begin);
+>>>>>>> Stashed changes
     }
 }

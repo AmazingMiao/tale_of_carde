@@ -10,6 +10,7 @@ public enum TCBattleState
     End
 }
 
+<<<<<<< Updated upstream
 public enum TCCardType
 {
     Attack,
@@ -19,3 +20,5 @@ public enum TCCardType
     Status
 }
 
+=======
+>>>>>>> Stashed changes

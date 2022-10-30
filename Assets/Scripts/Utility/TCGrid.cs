@@ -27,17 +27,29 @@ public class TCGrid : TCNode
 
     }
 
+<<<<<<< Updated upstream
     public void Accept(TCUnit unit)
     {
         if(this.unit != null)
         {
             return;
+=======
+    public bool Accept(TCUnit unit)
+    {
+        if(this.unit != null)
+        {
+            return false;
+>>>>>>> Stashed changes
         }
 
         this.unit = unit;
         this.unit.grid = this;
         unit.transform.SetParent(this.transform);
         unit.transform.localPosition = Vector2.zero;
+<<<<<<< Updated upstream
+=======
+        return true;
+>>>>>>> Stashed changes
     }
 
     public void Reload()
@@ -47,8 +59,17 @@ public class TCGrid : TCNode
 
     public void Clear()
     {
+<<<<<<< Updated upstream
         this.unit.grid = null;
         this.unit = null;
+=======
+        if(this.unit != null)
+        {
+            this.unit.grid = null;
+            this.unit = null;
+        }
+        this.EnterState(TCGridState.Normal);
+>>>>>>> Stashed changes
     }
 
     public void EnterState(TCGridState state)

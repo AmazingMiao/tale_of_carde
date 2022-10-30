@@ -11,6 +11,10 @@ public class TCUnitsSystem : MonoBehaviour
     }
     public List<TCUnit> playerUnits;
     public List<TCUnit> enemyUnits;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     public void LoadUnits()
     {
         TCUnit playerUnit1 = TCUnit.Create(1);
@@ -28,4 +32,15 @@ public class TCUnitsSystem : MonoBehaviour
         grid3.Accept(enemyUnit2);
         enemyUnits.Add(enemyUnit2);
     }
+<<<<<<< Updated upstream
+=======
+
+    public void ClearUnits()
+    {
+        foreach(var unit in playerUnits)
+        {
+            unit.ClearUnit();
+        }
+    }
+>>>>>>> Stashed changes
 }

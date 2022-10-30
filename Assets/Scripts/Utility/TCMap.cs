@@ -107,4 +107,15 @@ public class TCMap : TCNode
         }
         return ret;
     }
+<<<<<<< Updated upstream
+=======
+
+    public void ClearGrids()
+    {
+        foreach(var grid in grids)
+        {
+            grid.Clear();
+        }
+    }
+>>>>>>> Stashed changes
 }

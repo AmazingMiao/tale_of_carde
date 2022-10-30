@@ -26,7 +26,11 @@ public class TCDataManager : MonoBehaviour
         //Deserialize(levelData, out TCLevel.allKeys, out TCLevel.allValues);
         //Deserialize(itemData, out TCItem.allKeys, out TCItem.allValues);
         Deserialize(cardData, out TCCard.keys, out TCCard.values);
+<<<<<<< Updated upstream
         Deserialize(unitData, out TCCard.keys, out TCCard.values);
+=======
+        Deserialize(unitData, out TCUnit.keys, out TCUnit.values);
+>>>>>>> Stashed changes
         
     }
 

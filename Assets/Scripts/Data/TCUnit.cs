@@ -7,7 +7,18 @@ public class TCUnit : TCNode
 {
     public static Dictionary<string, int> keys;
     public static Dictionary<int, string> values;
+<<<<<<< Updated upstream
     public string key, note, displayName, spriteFilePath;
+=======
+
+    public enum TCUnitType
+    {
+        Player,
+        Enemy
+    }
+    public string key, note, displayName, spriteFilePath;
+    public TCUnitType type;
+>>>>>>> Stashed changes
     public int value;
     public int id;
     public int maxHP;
@@ -16,6 +27,10 @@ public class TCUnit : TCNode
     public int ap;
     public int atk;
     public int def;
+<<<<<<< Updated upstream
+=======
+    public bool isDead;
+>>>>>>> Stashed changes
 
     public Sprite sprite;
     //buff
@@ -28,6 +43,11 @@ public class TCUnit : TCNode
         GameObject unitObj = Instantiate(unitPrefab);
 
         TCUnit unit = unitObj.GetComponent<TCUnit>();
+<<<<<<< Updated upstream
+=======
+        //Debug.Log(unit);
+        //Debug.Log(values[id]);
+>>>>>>> Stashed changes
         Deserialize(values[id], unit);
 
         //Sprite s = Resources.Load("Images/CHARACTERS/player/hero" + id) as Sprite;
@@ -43,6 +63,10 @@ public class TCUnit : TCNode
     {
         string[] ss = s.Split(',');
         ret.key = ss[keys["Key"]];
+<<<<<<< Updated upstream
+=======
+        ret.type = DeserializeType(ss[keys["Type"]]);
+>>>>>>> Stashed changes
         ret.id = int.Parse(ss[keys["ID"]]);
         ret.displayName = ss[keys["Name"]];
         ret.note = ss[keys["Note"]];
@@ -56,4 +80,70 @@ public class TCUnit : TCNode
         //ret.ConfigUI();
         return ret;
     }
+<<<<<<< Updated upstream
+=======
+
+    public static TCUnitType DeserializeType(string s)
+    {
+        TCUnitType ret;
+        switch(s)
+        {
+            case "1":
+            ret = TCUnitType.Player;
+            break;
+            case "2":
+            ret = TCUnitType.Enemy;
+            break;
+            default:
+            ret = TCUnitType.Enemy;
+            break;
+        }
+        return ret;
+    }
+
+    void Update() 
+    {
+        if(this.hp <= 0)
+        {
+            Dead();
+        }
+    }
+
+    void Dead()
+    {
+        Debug.Log("Dead");
+            isDead = true;
+            switch(type)
+            {
+                case TCUnitType.Player:
+                TCUnitsSystem.instance.playerUnits.Remove(this);
+                if(TCUnitsSystem.instance.playerUnits.Count <= 0)
+                {
+                    TCBattleSystem.instance.Lose();
+                }
+                break;
+                case TCUnitType.Enemy:
+                TCUnitsSystem.instance.enemyUnits.Remove(this);
+                if(TCUnitsSystem.instance.enemyUnits.Count <= 0)
+                {
+                    TCBattleSystem.instance.Win();
+                }
+                break;
+                default:
+                TCUnitsSystem.instance.playerUnits.Remove(this);
+                if(TCUnitsSystem.instance.playerUnits.Count <= 0)
+                {
+                    TCBattleSystem.instance.Lose();
+                }
+                break;
+            }
+            Debug.Log(TCUnitsSystem.instance.enemyUnits.Count);
+            Destroy(gameObject);
+    }
+
+    public void ClearUnit()
+    {
+        Destroy(gameObject);
+    }
+>>>>>>> Stashed changes
 }
